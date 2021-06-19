@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./header.css";
+import {Link} from "react-router-dom";
 
 class Header extends Component {
     state = {
@@ -33,8 +34,17 @@ class Header extends Component {
             onKeyPress={this.handleKeyPress}
           />
         </div>
+        
+      <div className="header-links">
+        <div className="header-link">
+          <Link to = "/">Home</Link>
+        </div>
+        <div className="header-link">
+          <Link to = "/fav">Favourites</Link>
+        </div>
       </div>
-             );
+      </div>
+      );
     }
 }
  
