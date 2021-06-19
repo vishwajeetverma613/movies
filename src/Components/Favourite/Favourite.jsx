@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Favourite extends Component {
-    state = {  }
-    render() { 
-        return ( <h1>Favourite Page Component</h1> );
-    }
+  state = {};
+  render() {
+    return <h1>Favourite Page Component</h1>;
+  }
 }
- 
+
 export default Favourite;

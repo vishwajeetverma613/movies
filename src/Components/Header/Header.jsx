@@ -1,26 +1,27 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import "./header.css";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Header extends Component {
-    state = {
-        newMovieName: "",
-      };
-    
-      handleOnChange = (e) => {
-        let value = e.target.value;
-        this.setState({
-          newMovieName: value,
-        });
-      };
-    
-      handleKeyPress = (e) => {
-        if (e.key == "Enter") {
-          this.props.setMovies(this.state.newMovieName);
-        }
-      };
-    render() { 
-        return (<div className="header">
+  state = {
+    newMovieName: "",
+  };
+
+  handleOnChange = (e) => {
+    let value = e.target.value;
+    this.setState({
+      newMovieName: value,
+    });
+  };
+
+  handleKeyPress = (e) => {
+    if (e.key == "Enter") {
+      this.props.setMovies(this.state.newMovieName);
+    }
+  };
+  render() {
+    return (
+      <div className="header">
         <div className="logo">
           <img src="logo.svg" alt="" />
         </div>
@@ -34,18 +35,18 @@ class Header extends Component {
             onKeyPress={this.handleKeyPress}
           />
         </div>
-        
-      <div className="header-links">
-        <div className="header-link">
-          <Link to = "/">Home</Link>
-        </div>
-        <div className="header-link">
-          <Link to = "/fav">Favourites</Link>
+
+        <div className="header-links">
+          <div className="header-link">
+            <Link to="/">Home</Link>
+          </div>
+          <div className="header-link">
+            <Link to="/fav">Favourites</Link>
+          </div>
         </div>
       </div>
-      </div>
-      );
-    }
+    );
+  }
 }
- 
+
 export default Header;

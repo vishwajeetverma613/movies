@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { IMAGE_URL } from "../../API/secrets";
 import "./movie.css";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { API_KEY, API_URL } from "../../API/secrets";
 
@@ -22,26 +22,27 @@ class Movie extends Component {
       detailedMovieObj: { ...detailedMovieObj, poster_path: posterPath },
     });
     // let something = { a:"123" , b:"1231" , c:"1241" };
-  //  {...something} => {a:"123" , c:"1241"  , b:"asfasf" };
+    //  {...something} => {a:"123" , c:"1241"  , b:"asfasf" };
   }
-    render() { 
-        let { poster_path, title, vote_average } = this.props.movie;
-        let posterPath = IMAGE_URL + poster_path;
-        return (
-          <div className="movie-item">
-            <div className="movie-poster">
-            <Link
-            to={{ pathname: "/moviepage", state: this.state.detailedMovieObj }}>
-              <img src={posterPath} alt="" />
-              </Link>
-            </div>
-            <div className="movie-info">
-              <div className="movie-title">{title}</div>
-              <div className="movie-rating">{vote_average} IMDB</div>
-            </div>
-          </div>
-        );
-    }
+  render() {
+    let { poster_path, title, vote_average } = this.props.movie;
+    let posterPath = IMAGE_URL + poster_path;
+    return (
+      <div className="movie-item">
+        <div className="movie-poster">
+          <Link
+            to={{ pathname: "/moviepage", state: this.state.detailedMovieObj }}
+          >
+            <img src={posterPath} alt="" />
+          </Link>
+        </div>
+        <div className="movie-info">
+          <div className="movie-title">{title}</div>
+          <div className="movie-rating">{vote_average} IMDB</div>
+        </div>
+      </div>
+    );
+  }
 }
- 
+
 export default Movie;
